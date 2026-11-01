@@ -1,0 +1,30 @@
+# Day 3 - Daily Python Practice
+# Project: Password Generator
+
+import string
+import secrets
+
+print("===== PASSWORD GENERATOR =====")
+
+length = int(input("Enter password length: "))
+
+if length < 8:
+    print("Password length must be at least 8 characters.")
+
+else:
+    characters = (
+        string.ascii_letters +
+        string.digits +
+        string.punctuation
+    )
+
+    password = ''.join(
+        secrets.choice(characters)
+        for _ in range(length)
+    )
+
+    print("\nYour generated password is:")
+    print(password)
+
+    print("\nPassword generated successfully!")
+    print("Day 3 completed!")
